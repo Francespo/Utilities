@@ -1,0 +1,17 @@
+{
+    "name": "com.francespo.utilities.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:70875f9b04d87a84c8766ea18e3114be",
+        ""
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

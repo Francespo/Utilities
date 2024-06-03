@@ -4,6 +4,9 @@
   "displayName": "Utilities by Francespo",
   "description": "A collection of useful c# methods",
   "unity": "2021.1",
+  "dependencies": {
+      "com.unity.inputsystem": "1.6.3",
+  },
   "author": {
     "name": "Francespo"
   }
