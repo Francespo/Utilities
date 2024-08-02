@@ -1,26 +1,61 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Francespo.Loggers
 {
     public class LoggerComponent : MonoBehaviour
     {
+        [Header("Global Object Logs Settings")]
         [SerializeField] bool showLogs;
         [SerializeField] bool showWarningLogs;
         [SerializeField] bool showErrorLogs;
 
-        public LoggerComponent(bool showLogs, bool showWarningLogs, bool showErrorLogs)
+        [Header("Recurring Object Logs Settings")]
+        [SerializeField] bool showRecurringLogs;
+        [SerializeField, Min(0)] float firstRecurringLogAfterSeconds;
+        [SerializeField, Min(0)] float recurringLogSecondsInterval;
+
+
+        private List<RecurringLog> recurringLogs = new List<RecurringLog>();
+
+
+        private void Start()
+        {
+            StartCoroutine(C_RecurringLog(firstRecurringLogAfterSeconds));
+        }
+
+        IEnumerator C_RecurringLog(float timeToWait)
+        {
+            yield return new WaitForSeconds(timeToWait);
+            if (showRecurringLogs)
+                foreach (RecurringLog recurringLog in recurringLogs)
+                    recurringLog.LogIfCondition();
+        }
+
+        public void Init(bool showLogs = true, bool showWarningLogs = true, bool showErrorLogs = true, bool showRecurringLogs = true, float firstRecurringLogAfterSeconds = 0f, float recurringLogSecondsInterval = 1f)
         {
             this.showLogs = showLogs;
             this.showWarningLogs = showWarningLogs;
             this.showErrorLogs = showErrorLogs;
+
+            this.showRecurringLogs = showRecurringLogs;
+            this.firstRecurringLogAfterSeconds = firstRecurringLogAfterSeconds;
+            this.recurringLogSecondsInterval = recurringLogSecondsInterval;
         }
-        public LoggerComponent()
+
+
+        public void AddRecurringLog(RecurringLog recurringLog)
         {
-            this.showLogs = true;
-            this.showWarningLogs = true;
-            this.showErrorLogs = true;
+            recurringLogs.Add(recurringLog);
         }
+        public void RemoveRecurringLog(RecurringLog recurringLog)
+        {
+            recurringLogs.Remove(recurringLog);
+        }
+
 
         public void Log(object message, Object context)
         {
@@ -71,7 +106,6 @@ namespace Francespo.Loggers
                     debug += "\n" + obj;
                 Debug.Log(debug);
             }
-
         }
         public void LogMultiple(string header, IEnumerable objects)
         {
@@ -82,7 +116,6 @@ namespace Francespo.Loggers
                     debug += "\n" + obj;
                 Debug.Log(debug);
             }
-
         }
     }
 }
