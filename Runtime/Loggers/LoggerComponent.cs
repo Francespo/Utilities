@@ -31,8 +31,11 @@ namespace Francespo.Loggers
         {
             yield return new WaitForSeconds(timeToWait);
             if (showRecurringLogs)
+            {
                 foreach (RecurringLog recurringLog in recurringLogs)
                     recurringLog.LogIfCondition();
+                StartCoroutine(C_RecurringLog(recurringLogSecondsInterval));
+            }
         }
 
         public void Init(bool showLogs = true, bool showWarningLogs = true, bool showErrorLogs = true, bool showRecurringLogs = true, float firstRecurringLogAfterSeconds = 0f, float recurringLogSecondsInterval = 1f)
