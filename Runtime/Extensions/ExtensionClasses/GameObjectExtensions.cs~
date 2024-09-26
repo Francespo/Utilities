@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Francespo.Utilities.Extensions
+namespace Francespo.Extensions
 {
     public static class GameObjectExtensions
     {

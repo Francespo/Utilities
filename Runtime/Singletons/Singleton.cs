@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Francespo.Singletons
+namespace Francespo.Utilities.Singletons
 {
     public class Singleton<T> : MonoBehaviour where T : Component
     {

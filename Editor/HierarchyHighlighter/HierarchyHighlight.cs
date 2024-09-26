@@ -1,13 +1,8 @@
-#if UNITY_EDITOR
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEditor;
 
-using Scripts.Utility;
-
-namespace Assets.Editor
+namespace Francespo.Utilities.Editor
 {
     [InitializeOnLoad]
     public class HierarchyHighlightManager
@@ -19,13 +14,7 @@ namespace Assets.Editor
         //==============================================================================
 
 
-
         public static readonly Color DEFAULT_COLOR_HIERARCHY_SELECTED = new Color(0.243f, 0.4901f, 0.9058f, 1f);
-
-
-
-
-
 
 
         //==============================================================================
@@ -35,7 +24,6 @@ namespace Assets.Editor
         //==============================================================================
 
 
-
         static HierarchyHighlightManager()
         {
             EditorApplication.hierarchyWindowItemOnGUI -= HierarchyHighlight_OnGUI;
@@ -43,17 +31,11 @@ namespace Assets.Editor
         }
 
 
-
-
-
-
-
         //==============================================================================
         //
         //                                    EVENTS
         //
         //==============================================================================
-
 
 
         private static void HierarchyHighlight_OnGUI(int inSelectionID, Rect inSelectionRect)
@@ -64,7 +46,7 @@ namespace Assets.Editor
             {
                 HierarchyHighlighter Label = GO_Label.GetComponent<HierarchyHighlighter>();
 
-                if(Label != null && Event.current.type == EventType.Repaint)
+                if (Label != null && Event.current.type == EventType.Repaint)
                 {
                     #region Determine Styling
 
@@ -74,9 +56,9 @@ namespace Assets.Editor
                     Color TextCol = Label.Text_Color;
                     FontStyle TextStyle = Label.TextStyle;
 
-                    if(!Label.isActiveAndEnabled)
+                    if (!Label.isActiveAndEnabled)
                     {
-                        if(Label.Custom_Inactive_Colors)
+                        if (Label.Custom_Inactive_Colors)
                         {
                             BKCol = Label.Background_Color_Inactive;
                             TextCol = Label.Text_Color_Inactive;
@@ -84,7 +66,7 @@ namespace Assets.Editor
                         }
                         else
                         {
-                            if(BKCol != HierarchyHighlighter.DEFAULT_BACKGROUND_COLOR)
+                            if (BKCol != HierarchyHighlighter.DEFAULT_BACKGROUND_COLOR)
                                 BKCol.a = BKCol.a * 0.5f; //Reduce opacity by half
 
                             TextCol.a = TextCol.a * 0.5f;
@@ -113,7 +95,8 @@ namespace Assets.Editor
 
                         //Draw background
                         if (ObjectIsSelected)
-                            EditorGUI.DrawRect(BackgroundOffset, Color.Lerp(GUI.skin.settings.selectionColor, BKCol, 0.3f));
+                            EditorGUI.DrawRect(BackgroundOffset,
+                                Color.Lerp(GUI.skin.settings.selectionColor, BKCol, 0.3f));
                         else
                             EditorGUI.DrawRect(BackgroundOffset, BKCol);
                     }
@@ -133,4 +116,3 @@ namespace Assets.Editor
         }
     }
 }
-#endif

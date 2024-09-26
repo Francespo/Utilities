@@ -1,19 +1,18 @@
 {
-    "name": "com.francespo.utilities",
-    "version": "1.1.1",
-    "displayName": "Utilities by Francespo",
-    "description": "A collection of useful scripts",
-    "unity": "2022.1",
-    "dependencies": {
-        "com.unity.inputsystem": "1.6.0"
-    },
-    "keywords": [
-        "library",
-        "singletons",
-        "logger",
-        "utility"
-    ],
-    "author": {
-        "name": "Francespo"
-    }
+  "name": "com.francespo.utilities",
+  "version": "2.0.0",
+  "displayName": "Utilities by Francespo",
+  "description": "A collection of useful scripts",
+  "dependencies": {
+    "com.unity.inputsystem": "1.6.0"
+  },
+  "keywords": [
+    "library",
+    "singletons",
+    "logger",
+    "utility"
+  ],
+  "author": {
+    "name": "Francespo"
+  }
 }

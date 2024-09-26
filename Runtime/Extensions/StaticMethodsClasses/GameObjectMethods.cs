@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Francespo.Extensions
+namespace Francespo.Utilities.Extensions
 {
     public static class GameObjectMethods
     {

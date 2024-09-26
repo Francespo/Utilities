@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Francespo.Singletons
+namespace Francespo.Utilities.Singletons
 {
     /// <summary>
     /// Persistent Regulator singleton, will destroy any other older components of the same type it finds on awake

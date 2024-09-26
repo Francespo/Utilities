@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Francespo.Extensions
+namespace Francespo.Utilities.Extensions
 {
     public static class ColorExtensions
     {

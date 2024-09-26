@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Francespo.Extensions
+namespace Francespo.Utilities.Extensions
 {
     public static class ConfigurableJointExtensions
     {
@@ -75,7 +75,7 @@ namespace Francespo.Extensions
 
             joint.rotationDriveMode = RotationDriveMode.Slerp;
             var slerpDrive = joint.slerpDrive;
-            slerpDrive.mode = JointDriveMode.Position;
+            // OBSOLETE :slerpDrive.mode = JointDriveMode.Position;
             slerpDrive.maximumForce = Mathf.Infinity;
             joint.slerpDrive = slerpDrive;
         }

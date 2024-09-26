@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Francespo.Utilities.Extensions
+namespace Francespo.Extensions
 {
     public static class ComponentExtensions
     {

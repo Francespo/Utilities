@@ -1,6 +1,6 @@
 using System;
 
-namespace Francespo.Utilities.Loggers
+namespace Francespo.Loggers
 {
     public class RecurringLog
     {

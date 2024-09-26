@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-namespace Francespo.Extensions
+namespace Francespo.Utilities.Extensions
 {
     public static class StringMethods
     {

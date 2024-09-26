@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Francespo.Utilities.Extensions
+namespace Francespo.Extensions
 {
     public abstract class ConstructableMonoBehaviour<A0> : MonoBehaviour { public abstract void Init(A0 arg0); }
     public abstract class ConstructableMonoBehaviour<A0, A1> : MonoBehaviour { public abstract void Init(A0 arg0, A1 arg1); }
