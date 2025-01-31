@@ -95,11 +95,11 @@ public class EnhancedVector2Composite : InputBindingComposite<Vector2>
     [Tooltip("ONLY WORKS IF MODE IS NOT SET TO ANALOG. If both the positive and negative side are actuated, decides what value to return. 'Neither' (default) means that " +
     "the resulting value is 0. 'Positive' means that 1 will be returned. 'Negative' means that " +
     "-1 will be returned. 'LastPressed' means that 1 or -1 will be returned based on which button was pressed last")]
-    public WhichSideWins xAxisWhichSideWins;
+    public WhichSideWins xAxisWhichSideWins = WhichSideWins.LastPressed;
     [Tooltip("ONLY WORKS IF MODE IS NOT SET TO ANALOG. If both the positive and negative side are actuated, decides what value to return. 'Neither' (default) means that " +
 "the resulting value is 0. 'Positive' means that 1 will be returned. 'Negative' means that " +
 "-1 will be returned. 'LastPressed' means that 1 or -1 will be returned based on which button was pressed last")]
-    public WhichSideWins yAxisWhichSideWins;
+    public WhichSideWins yAxisWhichSideWins = WhichSideWins.LastPressed;
 
     private bool upPressedLastFrame;
     private bool downPressedLastFrame;
