@@ -10,8 +10,8 @@ using UnityEngine.Scripting;
 [UnityEditor.InitializeOnLoad]
 #endif
 [Preserve]
-[DisplayStringFormat("{up}/{left}/{down}/{right}")]
-[DisplayName("Up/Down/Left/Right Composite")]
+[DisplayStringFormat("{left}/{right}")]
+[DisplayName("Left/Right Composite")]
 public class Enhanced1DAxisComposite : InputBindingComposite<float>
 {
     /// <summary>
