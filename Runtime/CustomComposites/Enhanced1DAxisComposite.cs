@@ -1,10 +1,14 @@
 using System.ComponentModel;
-using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Controls;
 using UnityEngine.InputSystem.Layouts;
+using UnityEngine.InputSystem.Processors;
 using UnityEngine.InputSystem.Utilities;
-using UnityEngine.Scripting;
+
+#if UNITY_EDITOR
+using System;
+using UnityEditor;
+using UnityEngine.InputSystem.Editor;
+using UnityEngine.UIElements;
+#endif
 
 #if UNITY_EDITOR
 [InitializeOnLoad] // Automatically register in editor.
