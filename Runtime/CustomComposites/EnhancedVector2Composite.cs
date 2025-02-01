@@ -143,10 +143,10 @@ public class EnhancedVector2Composite : InputBindingComposite<Vector2>
         if (upIsPressed && downIsPressed)
             switch (yAxisWhichSideWins)
             {
-                case WhichSideWins.LeftOrUp:
+                case WhichSideWins.Positive:
                     downIsPressed = false;
                     break;
-                case WhichSideWins.RightOrDown:
+                case WhichSideWins.Negative:
                     upIsPressed = false;
                     break;
                 case WhichSideWins.Neither:
@@ -163,11 +163,11 @@ public class EnhancedVector2Composite : InputBindingComposite<Vector2>
         if (leftIsPressed && rightIsPressed)
             switch (xAxisWhichSideWins)
             {
-                case WhichSideWins.LeftOrUp:
-                    rightIsPressed = false;
-                    break;
-                case WhichSideWins.RightOrDown:
+                case WhichSideWins.Positive:
                     leftIsPressed = false;
+                    break;
+                case WhichSideWins.Negative:
+                    rightIsPressed = false;
                     break;
                 case WhichSideWins.Neither:
                     rightIsPressed = false;
@@ -230,8 +230,8 @@ public class EnhancedVector2Composite : InputBindingComposite<Vector2>
 
     public enum WhichSideWins
     {
-        LeftOrUp,
-        RightOrDown,
+        Positive,
+        Negative,
         Neither,
         LastPressed
     }
