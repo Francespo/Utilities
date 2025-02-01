@@ -1,4 +1,6 @@
 using System.ComponentModel;
+using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Layouts;
 using UnityEngine.InputSystem.Processors;
 using UnityEngine.InputSystem.Utilities;
@@ -137,8 +139,8 @@ public class Enhanced1DAxisComposite : InputBindingComposite<float>
     /// <inheritdoc />
     public override float ReadValue(ref InputBindingCompositeContext context)
     {
-        bool leftIsPressed = context.ReadValueAsButton(left);
-        bool rightIsPressed = context.ReadValueAsButton(right);
+        bool leftIsPressed = context.ReadValueAsButton(negative);
+        bool rightIsPressed = context.ReadValueAsButton(positive);
         
         if (leftIsPressed && !leftPressedLastFrame) leftPressTimestamp = Time.time;
         if (rightIsPressed && !rightPressedLastFrame) rightPressTimestamp = Time.time;
